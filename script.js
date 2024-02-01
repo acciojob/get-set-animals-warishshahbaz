@@ -6,7 +6,7 @@ class Animal {
 		return this._species;
 	}
 
-	makeSound () {
+	makeSound(){
 		console.log("The " + this.species + " make a sound")
 	}
 }
