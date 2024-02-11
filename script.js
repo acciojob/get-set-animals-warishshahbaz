@@ -1,32 +1,29 @@
 class Animal {
-    constructor(private _species: string) {}
+	constructor(species){
+		this._species = species;
+	}
+	get species(){
+		return this._species;
+	}
 
-    get species(): string {
-        return this._species;
-    }
-
-    makeSound(): void {
-        console.log(`The ${this.species} makes a sound`);
-    }
-}
-
-class Cat extends Animal {
-    purr(): void {
-        console.log("purr");
-    }
+	makeSound(){
+		console.log("The " + this.species + " make a sound")
+	}
 }
 
 class Dog extends Animal {
-    bark(): void {
-        console.log("woof");
-    }
+	bark(){
+		console.log('woof')
+	}
 }
 
-// Example usage
-const myCat = new Cat("Siamese");
-myCat.makeSound(); // Output: The Siamese makes a sound
-myCat.purr(); // Output: purr
+class Cat extends Animal {
+	purr(){
+		console.log('purr')
+	}
+}
 
-const myDog = new Dog("Golden Retriever");
-myDog.makeSound(); // Output: The Golden Retriever makes a sound
-myDog.bark(); // Output: woof
+// Do not change the code below this line
+window.Animal = Animal;
+window.Dog = Dog;
+window.Cat = Cat;
